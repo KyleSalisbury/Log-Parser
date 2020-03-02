@@ -52,3 +52,13 @@ for line in lines:
             Files[Filecheck] += 1
         else:
             Files[Filecheck] = 1
+ #Used for tracking error/redirection codes
+    codecheck = checklist[8]
+    if codecheck[0] = 4:
+        failcount += 1
+    if codecheck[0] = 3:
+        redirectcount += 1
+    
+    #used to check for months, and then to append current line to that specific file.
+    monthcheck = checklist[3].split(/)
+ 
