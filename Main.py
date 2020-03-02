@@ -12,3 +12,7 @@ Local_copy = open('Log_copy.log')
 lines = Local_copy.readlines()
 
 checklist = ()
+
+LogTotal = 0
+
+Files = {}
