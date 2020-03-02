@@ -38,3 +38,17 @@ oct = open('octlog.txt', 'w')
 nov = open('novlog.txt', 'w')
 dec = open('declog.txt', 'w')
 monthcheck = ''
+
+for line in lines:
+    checklist = (line.split())
+    #print(checklist)
+
+    LogTotal = LogTotal+1 #Used to count the total number of requests
+
+    #Used for tracking the usage of individual files
+    if len(checklist) > 5:
+        Filecheck = checklist[6]
+        if Filecheck in Files:
+            Files[Filecheck] += 1
+        else:
+            Files[Filecheck] = 1
