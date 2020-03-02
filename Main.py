@@ -62,3 +62,28 @@ for line in lines:
     #used to check for months, and then to append current line to that specific file.
     monthcheck = checklist[3].split(/)
  
+    if monthcheck[1] = 'jan':
+        janlog.write(f"{line}\n")
+    if monthcheck[1] = 'feb':
+        feblog.write(f"{line}\n")
+    if monthcheck[1] = 'mar':
+        marlog.write(f"{line}\n")
+    if monthcheck[1] = 'apr':
+        aprlog.write(f"{line}\n")
+    if monthcheck[1] = 'may':
+        maylog.write(f"{line}\n")
+    if monthcheck[1] = 'jun':
+        junlog.write(f"{line}\n")
+    if monthcheck[1] = 'jul':
+        jullog.write(f"{line}\n")
+    if monthcheck[1] = 'aug':
+        auglog.write(f"{line}\n")    
+    if monthcheck[1] = 'sep':
+        seplog.write(f"{line}\n")
+    if monthcheck[1] = 'oct':
+        octlog.write(f"{line}\n")
+    if monthcheck[1] = 'nov':
+        novlog.write(f"{line}\n")
+    if monthcheck[1] = 'dec':
+        declog.write(f"{line}\n")
+    
