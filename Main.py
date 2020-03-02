@@ -93,3 +93,15 @@ for line in lines:
         if monthcheck[1] == 'dec':
             declog.write(f"{line}\n")
        """
+counter = Counter(Files)    
+MostPopFile = counter.most_common(1)
+LeastPopFile = counter.most_common()[:-2:-1]
+
+    
+finalred = (redirectcount/LogTotal)*100
+finalfail = (failcount/LogTotal)*100
+print("The most popular file was", MostPopFile)
+print("The least popular file was", LeastPopFile)
+print("The total number of requests made was", LogTotal)
+print("The percentage of requests that were redirected was", finalred, '%')
+print("The percentage of requests that failed was", finalfail, "%" )    
