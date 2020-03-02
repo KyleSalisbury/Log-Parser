@@ -24,3 +24,17 @@ failcount = 0
 redirectcount = 0
 
 datecheck = ''
+
+jan = open('janlog.txt', 'w')
+feb = open('feblog.txt', 'w')
+mar = open('marlog.txt', 'w')
+apr = open('aprlog.txt', 'w')
+may = open('maylog.txt', 'w')
+jun = open('junlog.txt', 'w')
+jul = open('jullog.txt', 'w')
+aug = open('auglog.txt', 'w')
+sep = open('seplog.txt', 'w')
+oct = open('octlog.txt', 'w')
+nov = open('novlog.txt', 'w')
+dec = open('declog.txt', 'w')
+monthcheck = ''
