@@ -77,11 +77,11 @@ for line in lines:
    
     #Used for tracking error/redirection codes
     if len(checklist) > 8:
-    codecheck = checklist[8]
-    if codecheck[0] == "4":
-        failcount += 1
-    if codecheck[0] == "3":
-        redirectcount += 1
+        codecheck = checklist[8]
+        if codecheck[0] == "4":
+            failcount += 1
+        if codecheck[0] == "3":
+            redirectcount += 1
     
     
     
