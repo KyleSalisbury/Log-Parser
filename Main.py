@@ -23,7 +23,7 @@ Files = {}
 failcount = 0
 redirectcount = 0
 
-datecheck = ''
+
 
 jan = open('janlog.txt', 'w')
 feb = open('feblog.txt', 'w')
@@ -63,36 +63,7 @@ for line in lines:
         redirectcount += 1
     
     
-    #used to check for months, and then to append current line to that specific file.
-    if len(checklist) > 5: 
-        monthcheck2 = checklist[3]
-        monthcheck = monthcheck2.split('/')
-
-        if monthcheck[1] == 'jan':
-            janlog.write(f"{line}\n")
-        if monthcheck[1] =='feb':
-            feblog.write(f"{line}\n")
-        if monthcheck[1] == 'mar':
-            marlog.write(f"{line}\n")
-        if monthcheck[1] == 'apr':
-            aprlog.write(f"{line}\n")
-        if monthcheck[1] == 'may':
-            maylog.write(f"{line}\n")
-        if monthcheck[1] == 'jun':
-            junlog.write(f"{line}\n")
-        if monthcheck[1] == 'jul':
-            jullog.write(f"{line}\n")
-        if monthcheck[1] == 'aug':
-            auglog.write(f"{line}\n")    
-        if monthcheck[1] == 'sep':
-            seplog.write(f"{line}\n")
-        if monthcheck[1] == 'oct':
-            octlog.write(f"{line}\n")
-        if monthcheck[1] == 'nov':
-            novlog.write(f"{line}\n")
-        if monthcheck[1] == 'dec':
-            declog.write(f"{line}\n")
-       """
+    
 counter = Counter(Files)    
 MostPopFile = counter.most_common(1)
 LeastPopFile = counter.most_common()[:-2:-1]
