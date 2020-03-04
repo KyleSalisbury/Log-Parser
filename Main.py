@@ -1,6 +1,8 @@
 from urllib.request import urlretrieve
 import re
 from collections import Counter
+import os
+from datetime import datetime
 
 Address = 'https://s3.amazonaws.com/tcmg476/http_access_log'
 
@@ -8,7 +10,12 @@ Local_copy = 'Log_copy.log'
 
 local_file, headers = urlretrieve(Address, Local_copy) 
 
-
+if os.path.exists(Local_copy):
+    print("Local copy of log file detected...")
+else:
+    print("No log file found. Downloading from server...")
+    local_file, headers = urlretrieve(Address, Local_copy) 
+    
 #////////
 Local_copy = open('Log_copy.log')
 
@@ -19,25 +26,39 @@ checklist = ()
 LogTotal = 0
 
 Files = {}
+FilesByMonth = {
+    1: [],
+    2: [],
+    3: [],
+    4: [],
+    5: [],
+    6: [],
+    7: [],
+    8: [],
+    9: [],
+    10: [],
+    11: [],
+    12: [],
+}
 
 failcount = 0
 redirectcount = 0
 
 
 
-jan = open('janlog.txt', 'w')
-feb = open('feblog.txt', 'w')
-mar = open('marlog.txt', 'w')
-apr = open('aprlog.txt', 'w')
-may = open('maylog.txt', 'w')
-jun = open('junlog.txt', 'w')
-jul = open('jullog.txt', 'w')
-aug = open('auglog.txt', 'w')
-sep = open('seplog.txt', 'w')
-oct = open('octlog.txt', 'w')
-nov = open('novlog.txt', 'w')
-dec = open('declog.txt', 'w')
-monthcheck = ''
+jan = open('1.log', 'w')
+feb = open('2.log', 'w')
+mar = open('3.log', 'w')
+apr = open('4.log', 'w')
+may = open('5.log', 'w')
+jun = open('6.log', 'w')
+jul = open('7.log', 'w')
+aug = open('8.log', 'w')
+sep = open('9.log', 'w')
+oct = open('10.log', 'w')
+nov = open('11.log', 'w')
+dec = open('12.log', 'w')
+
 
 for line in lines:
     checklist = (line.split())
@@ -53,9 +74,9 @@ for line in lines:
         else:
             Files[Filecheck] = 1
     
-    """
+   
     #Used for tracking error/redirection codes
-    if len(checklist) > 5:
+    if len(checklist) > 8:
     codecheck = checklist[8]
     if codecheck[0] == "4":
         failcount += 1
@@ -71,6 +92,7 @@ LeastPopFile = counter.most_common()[:-2:-1]
     
 finalred = (redirectcount/LogTotal)*100
 finalfail = (failcount/LogTotal)*100
+
 print("The most popular file was", MostPopFile)
 print("The least popular file was", LeastPopFile)
 print("The total number of requests made was", LogTotal)
